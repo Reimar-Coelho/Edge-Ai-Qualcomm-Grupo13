@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analisador de Emoções</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            width: 250px;
+            text-align: center;
+            padding: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4285F4;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ae8;
+        }
+        #status {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Analisador de Emoções</h3>
+    <button id="toggleStream">Iniciar Análise</button>
+    <div id="status">Status: Inativo</div>
+    <script src="popup.js"></script>
+</body>
+</html>
