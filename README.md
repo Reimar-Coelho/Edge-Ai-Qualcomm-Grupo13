@@ -1,3 +1,4 @@
+
 # 🚀 Hackathon Qualcomm - Edge AI
 
 # 🎯 SalesFlow AI (InsightFlow)
@@ -6,7 +7,8 @@
 
 ## 👥 Grupo 13
 
-### :student: Integrantes: 
+## :student: Integrantes: 
+
 - <a href="https://www.linkedin.com/in/eduardo-jesus-2bb399285/">Eduardo Jesus</a>
 - <a href="https://www.linkedin.com/in/evertonmdev/">Everton Mendes</a>
 - <a href="https://www.linkedin.com/in/kaian-moura-56b8871b4">Kaian Moura</a> 
