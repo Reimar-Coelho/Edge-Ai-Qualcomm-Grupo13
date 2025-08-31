@@ -35,14 +35,29 @@ O **SalesFlow AI** é uma aplicação inovadora de Edge AI que revoluciona o pro
 
 ### 🛠️ **Tecnologias Utilizadas**
 
-- **Frontend**: React + TypeScript + Vite + Tailwind CSS
+#### **Frontend**
+- **React + TypeScript + Vite + Tailwind CSS**
 - **UI Components**: Radix UI para componentes acessíveis
-- **Edge AI**: Processamento local otimizado para Snapdragon X Plus
-- **Análise de Vídeo/Áudio**: Modelos de IA para detecção de emoções e análise de fala
+- **Build Tool**: Vite para desenvolvimento rápido
+
+#### **Backend & IA**
+- **Runtime**: Bun/Node.js com TypeScript
+- **WebSocket**: Comunicação em tempo real
+- **Python Bridge**: Integração com modelos de IA
+- **Detecção de Emoções**: FER (Facial Expression Recognition) + TensorFlow
+- **Processamento de Imagem**: OpenCV + Pillow
+- **Análise Facial**: MTCNN para detecção de faces
+
+#### **Edge AI & Modelos**
+- **FER**: Reconhecimento de expressões faciais
+- **TensorFlow**: Framework de machine learning otimizado
+- **MTCNN**: Multi-task Cascaded Convolutional Networks
+- **Face-API.js**: Biblioteca JavaScript para detecção facial
+- **Processamento Local**: Otimizado para Snapdragon X Plus NPU
 
 ## 📁 Estrutura do Projeto
 
-```
+```text
 Edge-Ai-Qualcomm-Grupo13/
 ├── 📄 index.html              # Landing page do projeto
 ├── 📄 README.md               # Documentação principal
@@ -59,50 +74,113 @@ Edge-Ai-Qualcomm-Grupo13/
 │       │   └── 📁 ui/         # Componentes UI reutilizáveis
 │       ├── 📁 guidelines/     # Diretrizes do projeto
 │       └── 📁 styles/         # Estilos globais
-└── 📁 backend/                # Backend e modelos de IA (em desenvolvimento)
+└── 📁 backend/                # Backend de IA e análise
+    ├── 📄 package.json        # Dependências Node.js/Bun
+    ├── 📄 requirements.txt    # Dependências Python
+    ├── 📄 index.ts            # Servidor WebSocket principal
+    ├── 📄 emotion_detector.py # Detector de emoções em Python
+    ├── 📁 src/
+    │   ├── 📁 modules/        # Módulos de IA
+    │   │   └── IndentifyFaceExpression.ts
+    │   ├── 📁 models/         # Modelos de machine learning
+    │   └── 📁 controller/     # Controladores de API
+    └── 📁 browser_extension/  # Extensão do Chrome
+        ├── 📄 manifest.json   # Configuração da extensão
+        ├── 📄 background.js   # Service worker
+        ├── 📄 popup.html      # Interface da extensão
+        └── 📄 offscreen.js    # Captura de vídeo
 ```
 
 ### 🔧 Componentes Principais
 
-- **Frontend Dashboard**: Interface responsiva construída com React + TypeScript
-- **Sistema de Componentes**: Baseado em Radix UI para máxima acessibilidade
-- **Edge AI Engine**: Modelos otimizados para processamento local
-- **Landing Page**: Página de apresentação do produto
+#### **Frontend Dashboard**
+- **Interface responsiva** construída com React + TypeScript
+- **Sistema de componentes** baseado em Radix UI para máxima acessibilidade
+- **Gerenciamento de estado** para reuniões e insights
+- **Visualizações em tempo real** de dados de emoções
+
+#### **Backend de IA**
+- **Servidor WebSocket** (TypeScript) para comunicação em tempo real
+- **Python Bridge** para integração com modelos de detecção de emoções
+- **Processamento de imagens** com OpenCV e TensorFlow
+- **API REST** para gerenciamento de sessões e relatórios
+
+#### **Modelos de IA Edge**
+- **FER (Facial Expression Recognition)** para detecção de 7 emoções básicas
+- **MTCNN** para detecção robusta de faces em tempo real
+- **Face-API.js** para processamento otimizado no navegador
+- **TensorFlow.js** otimizado para Snapdragon X Plus NPU
+
+#### **Extensão do Navegador**
+- **Captura de vídeo** em tempo real durante reuniões
+- **Análise discreta** sem interferir na experiência do usuário
+- **Compatibilidade** com Google Meet, Zoom, Teams
+- **Interface minimalista** para controle e status
 
 ## 💻 Configuração e Execução
 
 ### 📋 Pré-requisitos
 
-- **Node.js** 18+ 
-- **npm** ou **yarn**
+- **Node.js** 18+
+- **Python** 3.8+
+- **Bun** (opcional, pode usar npm)
 - **Git**
 - **Dispositivo compatível** com Snapdragon X Plus (recomendado)
 
 ### 🚀 Instalação
 
 1. **Clone o repositório**:
+
    ```bash
    git clone https://github.com/Reimar-Coelho/Edge-Ai-Qualcomm-Grupo13.git
    cd Edge-Ai-Qualcomm-Grupo13
    ```
 
 2. **Configure o Frontend**:
+
    ```bash
    cd frontend
    npm install
    ```
 
-3. **Execute o projeto**:
+3. **Configure o Backend**:
+
    ```bash
-   # Desenvolvimento
-   npm run dev
+   cd ../backend
    
-   # Build para produção
-   npm run build
+   # Instalar dependências Node.js/Bun
+   bun install
+   # ou: npm install
+   
+   # Instalar dependências Python
+   pip install -r requirements.txt
+   # ou: python -m pip install -r requirements.txt
    ```
 
-4. **Acesse a aplicação**:
+4. **Execute o projeto**:
+
+   **Terminal 1 - Backend:**
+   ```bash
+   cd backend
+   bun run index.ts
+   # ou: npm run dev
+   ```
+
+   **Terminal 2 - Frontend:**
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+
+5. **Instale a Extensão do Chrome** (opcional):
+   - Abra `chrome://extensions/`
+   - Ative "Modo desenvolvedor"
+   - Clique em "Carregar extensão sem compactação"
+   - Selecione a pasta `backend/browser_extension`
+
+6. **Acesse a aplicação**:
    - Dashboard: `http://localhost:5173`
+   - Backend WebSocket: `ws://localhost:8080`
    - Landing Page: Abra `index.html` no navegador
 
 ### 🖥️ Execução em Diferentes Ambientes
@@ -129,12 +207,100 @@ O sistema foi otimizado para rodar em dispositivos **Snapdragon X Plus**, aprove
 
 ## 🎯 Como Usar
 
-1. **Inicie uma reunião** através da interface do dashboard
-2. **Conecte-se** à sua plataforma de videoconferência (Zoom, Teams, Meet)
-3. **Receba insights** em tempo real durante a conversa
-4. **Analise relatórios** detalhados após o término da reunião
+### 🖥️ **Modo Dashboard (Desenvolvimento)**
+1. **Inicie o backend** (`bun run index.ts` na pasta backend)
+2. **Inicie o frontend** (`npm run dev` na pasta frontend)
+3. **Acesse o dashboard** em `http://localhost:5173`
+4. **Configure uma reunião** através da interface
 
-## 🏆 Diferenciais da Solução
+### 🌐 **Modo Extensão (Produção)**
+1. **Instale a extensão** no Chrome conforme instruções acima
+2. **Entre em uma reunião** (Google Meet, Zoom, Teams)
+3. **Ative a extensão** clicando no ícone
+4. **Receba insights** em tempo real durante a conversa
+
+### 📊 **Fluxo de Análise**
+1. **Captura de vídeo** → A extensão/interface captura frames da câmera
+2. **Detecção de faces** → MTCNN identifica rostos na imagem
+3. **Análise de emoções** → FER classifica expressões faciais
+4. **Processamento local** → Tudo roda no dispositivo Snapdragon X Plus
+5. **Insights em tempo real** → Dashboard mostra resultados instantaneamente
+6. **Relatórios pós-reunião** → Análise completa com marcos temporais
+
+### 🔧 **APIs Disponíveis**
+
+#### **WebSocket** (`ws://localhost:8080`)
+```json
+// Enviar frame para análise
+{
+  "command": "analyze_frame",
+  "image": "data:image/jpeg;base64,..."
+}
+
+// Resposta com emoções detectadas
+{
+  "faces": 2,
+  "results": [
+    {
+      "face": 1,
+      "emotion": "happy",
+      "confidence": 0.89
+    }
+  ]
+}
+```
+
+## �️ Arquitetura do Backend
+
+### 🔧 **Componentes Principais**
+
+#### **🌐 Servidor WebSocket (TypeScript)**
+- **Comunicação em tempo real** entre frontend e modelos de IA
+- **Processamento de frames** de vídeo em alta performance
+- **Gestão de sessões** de múltiplos usuários simultaneamente
+
+#### **🐍 Python AI Bridge**
+- **Interface de comunicação** entre Node.js/Bun e modelos Python
+- **Processamento de imagens** com OpenCV e Pillow
+- **Detecção de emoções** usando FER e TensorFlow
+- **Otimização de memória** para processamento contínuo
+
+#### **🧠 Modelos de IA**
+- **FER (Facial Expression Recognition)**: 7 emoções básicas
+  - `angry`, `disgust`, `fear`, `happy`, `sad`, `surprise`, `neutral`
+- **MTCNN**: Detecção robusta de múltiplas faces
+- **TensorFlow**: Backend otimizado para Snapdragon X Plus
+- **Face-API.js**: Processamento alternativo no navegador
+
+#### **🔌 Extensão do Chrome**
+- **Service Worker**: Captura discreta de vídeo
+- **Offscreen Processing**: Análise sem interferir na UI
+- **Content Scripts**: Integração com plataformas de videoconferência
+- **Background Processing**: Envio contínuo para servidor
+
+### 📊 **Fluxo de Dados**
+
+```mermaid
+graph LR
+    A[Câmera] --> B[Extensão Chrome]
+    B --> C[WebSocket Server]
+    C --> D[Python AI Bridge]
+    D --> E[Modelos FER/MTCNN]
+    E --> D
+    D --> C
+    C --> F[Frontend Dashboard]
+    F --> G[Insights em Tempo Real]
+```
+
+### ⚡ **Performance e Otimizações**
+
+- **Edge Computing**: 100% processamento local
+- **Baixa Latência**: < 200ms por frame analisado
+- **Snapdragon X Plus NPU**: Aceleração dedicada para IA
+- **Memory Pooling**: Reutilização eficiente de recursos
+- **Frame Throttling**: Análise inteligente baseada em mudanças
+
+## �🏆 Diferenciais da Solução
 
 - ✅ **100% Edge Computing**: Processamento local sem envio de dados
 - ✅ **Tempo Real**: Análise instantânea durante reuniões
