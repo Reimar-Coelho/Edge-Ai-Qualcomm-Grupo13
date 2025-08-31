@@ -1,0 +1,11 @@
+# Dependências para detecção de emoções
+fer>=22.5.0
+tensorflow>=2.10.0
+opencv-python>=4.6.0
+pillow>=9.0.0
+numpy>=1.21.0
+mtcnn>=0.1.1
+
+# Alternativa (descomente se preferir DeepFace)
+# deepface>=0.0.79
+# opencv-python>=4.6.0
