@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalesFlow AI - Insights Inteligentes para Vendedores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #4F46E5 0%, #10B981 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-chart-line text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-dark">SalesFlow AI</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#features" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Recursos</a>
+                    <a href="#how-it-works" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Como Funciona</a>
+                    <a href="#pricing" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Preços</a>
+                    <a href="#testimonials" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Depoimentos</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#download" class="ml-8 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 pulse-animation">
+                        Baixar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                    Revolucione Suas Vendas com IA em Tempo Real
+                </h1>
+                <p class="mt-6 max-w-lg mx-auto text-xl">
+                    SalesFlow AI analisa suas reuniões de vendas, identifica pontos críticos e guia você através do funil de vendas perfeito - tudo rodando localmente no seu notebook com Snapdragon X Plus.
+                </p>
+                <div class="mt-10 flex justify-center space-x-4">
+                    <a href="#download" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-primary bg-white hover:bg-gray-100">
+                        <i class="fas fa-download mr-2"></i> Instalar Agora
+                    </a>
+                    <a href="#demo" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-800 bg-opacity-60 hover:bg-opacity-70">
+                        <i class="fas fa-play-circle mr-2"></i> Ver Demonstração
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-16 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base font-semibold text-primary tracking-wide uppercase">Recursos Poderosos</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Tudo que você precisa para fechar mais negócios
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-100 text-primary">
+                        <i class="fas fa-funnel-dollar text-xl"></i>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-medium text-dark">Monitoramento do Funil de Vendas</h3>
+                        <p class="mt-2 text-gray-500">
+                            Alertas em tempo real quando você pular etapas cruciais do funil de vendas, garantindo que nenhuma oportunidade seja perdida.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-secondary">
+                        <i class="fas fa-comment-dots text-xl"></i>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-medium text-dark">Análise de Emoções</h3>
+                        <p class="mt-2 text-gray-500">
+                            Detecta expressões faciais e tom de voz para identificar momentos de insatisfação, interesse ou dúvida do cliente.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-100 text-purple-600">
+                        <i class="fas fa-lightbulb text-xl"></i>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-medium text-dark">Insights Acionáveis</h3>
+                        <p class="mt-2 text-gray-500">
+                            Sugestões inteligentes baseadas em milhares de reuniões analisadas, mostrando o que fazer em cada momento da negociação.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                        <i class="fas fa-chart-pie text-xl"></i>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-medium text-dark">Relatórios Pós-Reunião</h3>
+                        <p class="mt-2 text-gray-500">
+                            Análise completa com marcos temporais, pontos fortes e áreas de melhoria para cada reunião realizada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-100 text-yellow-600">
+                        <i class="fas fa-robot text-xl"></i>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-medium text-dark">IA Edge Local</h3>
+                        <p class="mt-2 text-gray-500">
+                            Processamento 100% local no seu Snapdragon X Plus, sem enviar dados sensíveis para nuvem, garantindo privacidade total.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-medium text-dark">Resposta Instantânea</h3>
+                        <p class="mt-2 text-gray-500">
+                            Processamento em tempo real com baixa latência, fornecendo feedback enquanto a reunião ainda está acontecendo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div id="how-it-works" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base font-semibold text-primary tracking-wide uppercase">Como Funciona</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Transformando reuniões em resultados
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                    <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-md p-2">
+                                    <i class="fas fa-microphone text-primary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">1. Conecte-se à Reunião</h4>
+                                    <p class="mt-1 text-gray-500">
+                                        Integração perfeita com Zoom, Teams, Meet ou qualquer plataforma de chamada. Ou simplesmente grave diretamente pelo app.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 rounded-md p-2">
+                                    <i class="fas fa-brain text-secondary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">2. Análise em Tempo Real</h4>
+                                    <p class="mt-1 text-gray-500">
+                                        Nossa IA processa voz, vídeo e conteúdo para identificar padrões, emoções e estágios do funil de vendas.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-purple-100 rounded-md p-2">
+                                    <i class="fas fa-lightbulb text-purple-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">3. Receba Insights</h4>
+                                    <p class="mt-1 text-gray-500">
+                                        Alertas discretos durante a reunião e relatórios detalhados após, com marcos temporais e recomendações.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-blue-100 rounded-md p-2">
+                                    <i class="fas fa-chart-line text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">4. Melhore Seu Desempenho</h4>
+                                    <p class="mt-1 text-gray-500">
+                                        Acompanhe seu progresso ao longo do tempo e domine cada etapa do processo de vendas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                        <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+                            <div class="relative block w-full bg-white rounded-lg overflow-hidden">
+                                <img class="w-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="App screenshot">
+                                <div class="absolute inset-0 bg-primary bg-opacity-50 flex items-center justify-center">
+                                    <a href="#demo" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-primary bg-white hover:bg-gray-100">
+                                        <i class="fas fa-play-circle mr-2"></i> Ver Demonstração
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Video -->
+    <div id="demo" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base font-semibold text-primary tracking-wide uppercase">Demonstração</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Veja o SalesFlow AI em ação
+                </p>
+            </div>
+            <div class="mt-10 aspect-w-16 aspect-h-9">
+                <div class="relative w-full h-0 pb-[56.25%] bg-gray-200 rounded-lg overflow-hidden shadow-xl">
+                    <div class="absolute inset-0 flex items-center justify-center bg-gray-800">
+                        <button class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-indigo-700">
+                            <i class="fas fa-play mr-2"></i> Assistir Vídeo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base font-semibold text-primary tracking-wide uppercase">Depoimentos</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    O que nossos usuários dizem
+                </p>
+            </div>
+            <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="User testimonial">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-lg font-medium text-gray-900">Ana Souza</div>
+                            <div class="text-gray-500">Gerente de Vendas, TechCorp</div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-600">
+                            "O SalesFlow AI mudou completamente minha abordagem de vendas. Agora consigo identificar exatamente quando o cliente está confuso ou interessado, e minhas taxas de fechamento aumentaram 35%."
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/54.jpg" alt="User testimonial">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-lg font-medium text-gray-900">Carlos Mendes</div>
+                            <div class="text-gray-500">Executivo de Contas, GlobalSoft</div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-600">
+                            "Os alertas quando pulo etapas do funil são incríveis. Antes eu nem percebia que estava fazendo isso. Agora minhas negociações são muito mais estruturadas e eficientes."
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User testimonial">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-lg font-medium text-gray-900">Juliana Oliveira</div>
+                            <div class="text-gray-500">Diretora Comercial, InovaTech</div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-600">
+                            "Implementamos para toda a equipe e os resultados foram impressionantes. O treinamento de novos vendedores ficou 50% mais rápido e a produtividade aumentou significativamente."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Download -->
+    <div id="download" class="bg-primary">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+            <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                <span class="block">Pronto para transformar suas vendas?</span>
+                <span class="block text-indigo-200">Baixe o SalesFlow AI hoje mesmo.</span>
+            </h2>
+            <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50">
+                        <i class="fab fa-windows mr-2"></i> Windows
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base font-semibold text-primary tracking-wide uppercase">Perguntas Frequentes</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Tudo que você precisa saber
+                </p>
+            </div>
+            <div class="mt-12">
+                <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Como a privacidade dos dados é garantida?
+                        </dt>
+                        <dd class="mt-2 text-gray-500">
+                            Todo o processamento acontece localmente no seu dispositivo com Snapdragon X Plus. Nenhum áudio, vídeo ou dado sensível é enviado para a nuvem, garantindo total privacidade e segurança.
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Quais plataformas de chamada são compatíveis?
+                        </dt>
+                        <dd class="mt-2 text-gray-500">
+                            O SalesFlow AI funciona com Zoom, Microsoft Teams, Google Meet e qualquer outra plataforma que permita compartilhamento de tela ou captura de áudio. Também pode gravar reuniões presenciais através da câmera e microfone do notebook.
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Posso personalizar as etapas do meu funil de vendas?
+                        </dt>
+                        <dd class="mt-2 text-gray-500">
+                            Sim! Você pode definir completamente seu próprio funil de vendas ou usar nossos templates baseados em melhores práticas do mercado. O sistema aprenderá com seu estilo único ao longo do tempo.
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Quanto tempo leva para configurar e começar a usar?
+                        </dt>
+                        <dd class="mt-2 text-gray-500">
+                            A instalação leva menos de 2 minutos. Depois de baixar e instalar, basta conectar-se à sua próxima reunião - o SalesFlow AI começa a trabalhar imediatamente.
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            O sistema funciona offline?
+                        </dt>
+                        <dd class="mt-2 text-gray-500">
+                            Sim! Como todo o processamento acontece localmente no seu dispositivo, você só precisa de conexão com a internet para baixar atualizações. As análises funcionam perfeitamente offline.
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Posso testar antes de comprar?
+                        </dt>
+                        <dd class="mt-2 text-gray-500">
+                            Oferecemos uma versão de avaliação gratuita por 14 dias com todas as funcionalidades do plano Profissional. Sem necessidade de cartão de crédito para começar.
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Produto</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Recursos</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Preços</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Changelog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Empresa</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Sobre</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Carreiras</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Legal</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Privacidade</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Termos</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Segurança</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Conectar</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">LinkedIn</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2025 SalesFlow AI. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Demo video play button
+        document.querySelector('.relative.w-full button').addEventListener('click', function() {
+            const videoContainer = this.parentElement;
+            videoContainer.innerHTML = `
+                <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
+        });
+    </script>
+</body>
+</html>
